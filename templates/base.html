@@ -15,17 +15,19 @@
       {% if user.is_authenticated %}
       <li><a href="{% url 'tasks:index' %}">Lista de Tareas</a></li>
       <li>
-        <!-- Formulario para el logout -->
-        <form action="{% url 'logout' %}" method="post" style="display:inline;">
+
+        <form action="{% url 'accounts:logout' %}" method="post" style="display:inline;">
           {% csrf_token %}
           <a href="javascript:void(0);" onclick="this.closest('form').submit();" class="logout-link">
             Cerrar sesión
           </a>
         </form>
+
       </li>
+      <li><a href="{% url 'accounts:user_detail' pk=user.id %}">Información del usuario</a></li>
       {% else %}
-      <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
-      <li><a href="{% url 'signup' %}">Registro de usuario</a></li>
+      <li><a href="{% url 'accounts:login' %}">Iniciar Sesión</a></li>
+      <li><a href="{% url 'accounts:signup' %}">Registro de usuario</a></li>
       {% endif %}
     </ul>
   </nav>

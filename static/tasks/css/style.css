@@ -1,5 +1,6 @@
 main {
   margin: 100px 50px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 nav {
@@ -25,6 +26,7 @@ nav ul:after {
 
 nav li {
   float: left;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 nav li a {
