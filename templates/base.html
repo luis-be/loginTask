@@ -14,6 +14,7 @@
     <ul>
       {% if user.is_authenticated %}
       <li><a href="{% url 'tasks:index' %}">Lista de Tareas</a></li>
+      <li><a href="{% url 'accounts:user_detail' pk=user.id %}">Información del usuario</a></li>
       <li>
 
         <form action="{% url 'accounts:logout' %}" method="post" style="display:inline;">
@@ -24,7 +25,6 @@
         </form>
 
       </li>
-      <li><a href="{% url 'accounts:user_detail' pk=user.id %}">Información del usuario</a></li>
       {% else %}
       <li><a href="{% url 'accounts:login' %}">Iniciar Sesión</a></li>
       <li><a href="{% url 'accounts:signup' %}">Registro de usuario</a></li>
